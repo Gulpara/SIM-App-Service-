@@ -1,0 +1,50 @@
+balance = 500
+
+def main_menu():
+    print("\n SIM SERVICE CARE ")
+    print("1. Check Balance")
+    print("2. Recharge")
+    print("3. Buy Internet Package")
+    print("4. Exit")
+
+while True:
+    main_menu()
+    choice = input("Choose a service: ")
+
+    if choice == "1":
+        print(f"Your current balance is: {balance} PKR")
+
+    elif choice == "2":
+        amount = int(input("Enter recharge amount: "))
+        balance += amount
+        print(f"Recharge successful! New balance: {balance} PKR")
+
+    elif choice == "3":
+        print("\nInternet Packages:")
+        print("1. 1GB - 50 PKR")
+        print("2. 5GB - 200 PKR")
+        package = input("Choose package: ")
+
+        if package == "1":
+            if balance >= 50:
+                balance -= 50
+                print("1GB Internet Activated!")
+            else:
+                print("Not enough balance!")
+
+        elif package == "2":
+            if balance >= 200:
+                balance -= 200
+                print("5GB Internet Activated!")
+            else:
+                print("Not enough balance!")
+
+        else:
+            print("Invalid package")
+
+    elif choice == "4":
+        print("Thank you for using SIM Service Care!")
+        break
+
+    else:
+        print("Invalid choice! Try again.")
